@@ -1,0 +1,45 @@
+<h1>Register</h1>
+<div>
+	<% if flash[:status] == TRUE %>
+		<p><%= flash[:alert] %></p>
+	<% elseif flash[:status] == FALSE %>
+	    <p><%= error %>
+	   <% end %>
+	<% end %>
+</div>
+
+<%= form_for @user do |user| %>
+	<div>
+		<%= user.lable(:first_name,"First Name") %>
+		<%= user.text_field :first_name %>
+	</div>
+
+	<div>
+		<%= user.lable(:last_name_name,"Last Name") %>
+		<%= user.text_field :last_name %>
+	</div>
+
+	<div>
+		<%= user.lable(:email,"Email") %>
+		<%= user.text_field :email %>
+	</div>
+
+	<div>
+		<%= user.lable(:password,"Password") %>
+		<%= user.text_field :password %>
+	</div>
+
+	<div>
+		<%= user.lable(:password_conformation,"Conform Password") %>
+		<%= user.text_field :password_conformation %>
+	</div>
+
+	<div>
+		<%= user.lable(:phone,"Phone No") %>
+		<%= user.text_field :phone %>
+	</div>
+
+	<div>
+		<%= submit_tag "Register" %>
+	</div>
+<% end %>
